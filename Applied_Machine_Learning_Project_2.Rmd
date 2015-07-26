@@ -1,0 +1,45 @@
+---
+title: "Applied Machine Learning Project"
+output: html_document
+---
+
+The goal of this project was to apply methods learned in this course to using personal activity sensor data to detect correct and incorrect exercise technique. The project used data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants performing dumbbell lifts correctly and incorrectly in 4 different ways. The dataset and project are described in the following website:http://groupware.les.inf.puc-rio.br/har (see the section on the Weight Lifting Exercise Dataset).   
+
+The dataset and different approaches to preparing and analyzing data are presented in the following publication (available for download from the website): Velloso E, Gellersen H, Ugulino W, Kuks H. Qualitative activity recognition of weight lifting exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13). Stuttgart, Germany, ACM SIGCHI, 2013. 
+
+## Approach
+
+### Variable Selection
+
+The outcome for this project was the classe variable that indicates which of 5 conditions was in effect during the exercise (correct technique versus four different incorrect techniques). 
+
+There were 167 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used to predict classe. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 66 variables were retained as predictors of the outcome, classe.
+
+### Cross validation
+
+5-fold cross validation was used in the training dataset using 5 randomally selected, equal sized subsets. The first subset was used to train the selection algorithm, and results were cross-validated on the remaining four datasets.
+
+### Classification Algorithm
+
+The random forest method was used within the R caret package. The training model was fitted using the following command:
+
+pmlfit1 <- train(classe ~ . , data=pmlTrainb1, method="rf")
+
+This model fit was then used to generate predicted outcomes in the four cross-validation samples, and these predictions were compared with the actual condition (classe).
+
+## Results
+
+Classification accuracy within the four cross-validation samples was as follows:
+
+-   sample 2 - 0.9651
+-   sample 3 - 0.9681
+-   sample 4 - 0.9641
+-   sample 5 - 0.9689
+
+Overall accuracy of the random forest algorithm in the four cross-validation samples was consistently about 96%. Velloso et al. (2013) achieved accuracy of about 98% using a classification approach that incorporated bagging with random forest selection, and this suggests that the addition of bagging makes a small incremental improvement to selection accuracy.
+
+
+
+
+
+
