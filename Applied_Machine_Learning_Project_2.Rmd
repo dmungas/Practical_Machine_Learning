@@ -13,7 +13,7 @@ The dataset and different approaches to preparing and analyzing data are present
 
 The outcome for this project was the classe variable that indicates which of 5 conditions was in effect during the exercise (correct technique versus four different incorrect techniques). 
 
-There were 167 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used to predict classe. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 66 variables were retained as predictors of the outcome, classe.
+There were 153 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used as predictors. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 52 variables were retained as predictors of the outcome, classe.
 
 ### Cross validation
 
@@ -31,10 +31,10 @@ This model fit was then used to generate predicted outcomes in the four cross-va
 
 Classification accuracy within the four cross-validation samples was as follows:
 
--   sample 2 - 0.9651
--   sample 3 - 0.9681
--   sample 4 - 0.9641
--   sample 5 - 0.9689
+-   sample 2 - 0.9676
+-   sample 3 - 0.9704
+-   sample 4 - 0.9684
+-   sample 5 - 0.9692
 
 Overall accuracy of the random forest algorithm in the four cross-validation samples was consistently about 96%. Velloso et al. (2013) achieved accuracy of about 98% using a classification approach that incorporated bagging with random forest selection, and this suggests that the addition of bagging makes a small incremental improvement to selection accuracy.
 

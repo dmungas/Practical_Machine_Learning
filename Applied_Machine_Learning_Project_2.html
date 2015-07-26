@@ -71,7 +71,7 @@ img {
 <div id="variable-selection" class="section level3">
 <h3>Variable Selection</h3>
 <p>The outcome for this project was the classe variable that indicates which of 5 conditions was in effect during the exercise (correct technique versus four different incorrect techniques).</p>
-<p>There were 167 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used to predict classe. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 66 variables were retained as predictors of the outcome, classe.</p>
+<p>There were 153 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used as predictors. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 52 variables were retained as predictors of the outcome, classe.</p>
 </div>
 <div id="cross-validation" class="section level3">
 <h3>Cross validation</h3>
@@ -88,10 +88,10 @@ img {
 <h2>Results</h2>
 <p>Classification accuracy within the four cross-validation samples was as follows:</p>
 <ul>
-<li>sample 2 - 0.9651</li>
-<li>sample 3 - 0.9681</li>
-<li>sample 4 - 0.9641</li>
-<li>sample 5 - 0.9689</li>
+<li>sample 2 - 0.9676</li>
+<li>sample 3 - 0.9704</li>
+<li>sample 4 - 0.9684</li>
+<li>sample 5 - 0.9692</li>
 </ul>
 <p>Overall accuracy of the random forest algorithm in the four cross-validation samples was consistently about 96%. Velloso et al. (2013) achieved accuracy of about 98% using a classification approach that incorporated bagging with random forest selection, and this suggests that the addition of bagging makes a small incremental improvement to selection accuracy.</p>
 </div>
