@@ -13,7 +13,7 @@ The dataset and different approaches to preparing and analyzing data are present
 
 The outcome for this project was the classe variable that indicates which of 5 conditions was in effect during the exercise (correct technique versus four different incorrect techniques). 
 
-There were 153 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used as predictors. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 52 variables were retained as predictors of the outcome, classe.
+There were 152 potential predictor variables taken from sensors on the upper arm, wrist, belt, and dumbbell. The seven administrative variables at the beginning of the dataset were not used as predictors. The nearZeroVar function in the caret package was used to identify 60 variables that were not useful as predictors because they had essentially no variance in this dataset. These variables were dropped as predictors, and 40 additional variables that did not have complete data for all observations also were dropped. 52 variables were retained as predictors of the outcome, classe.
 
 ### Cross validation
 
